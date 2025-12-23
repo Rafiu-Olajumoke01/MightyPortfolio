@@ -1,0 +1,369 @@
+.mindset-container-new {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #020617, #0f172a, #020617);
+    color: white;
+    padding: 0;
+  }
+  
+  /* Hero Section */
+  .mindset-hero-new {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px 64px;
+  }
+  
+  .hero-badge-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 50px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #10b981;
+    font-weight: 500;
+  }
+  
+  .badge-icon {
+    font-size: 16px;
+  }
+  
+  .hero-title-new {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+  
+  .highlight-text {
+    color: #10b981;
+  }
+  
+  .hero-subtitle-new {
+    font-size: 20px;
+    color: #cbd5e1;
+    margin-bottom: 32px;
+    max-width: 900px;
+    line-height: 1.6;
+  }
+  
+  .core-beliefs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 64px;
+  }
+  
+  .belief-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  .belief-title {
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .belief-reality {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+  
+  /* Thinking Process Section */
+  .thinking-process-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  
+  .section-header {
+    margin-bottom: 48px;
+  }
+  
+  .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .section-header p {
+    font-size: 18px;
+    color: #94a3b8;
+  }
+  
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .process-card {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .process-card:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  
+  .process-card.expanded {
+    background: rgba(30, 41, 59, 0.5);
+  }
+  
+  .process-card-header {
+    width: 100%;
+    padding: 24px;
+    text-align: left;
+    display: flex;
+    gap: 16px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .process-card-header:hover {
+    background: rgba(30, 41, 59, 0.5);
+  }
+  
+  .process-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+  
+  .process-content {
+    flex: 1;
+  }
+  
+  .process-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .process-title-row h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .expand-indicator {
+    color: #64748b;
+    font-size: 32px;
+    line-height: 1;
+  }
+  
+  .process-question {
+    color: #10b981;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .process-approach {
+    color: #94a3b8;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .process-expanded {
+    padding: 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid rgba(51, 65, 85, 0.5);
+    padding-top: 24px;
+    margin-top: 4px;
+  }
+  
+  .example-box {
+    background: rgba(15, 23, 42, 0.5);
+    border-left: 4px solid #10b981;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .example-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #10b981;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .check-icon {
+    font-size: 16px;
+  }
+  
+  .example-box p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .antipattern-box {
+    background: rgba(127, 29, 29, 0.2);
+    border-left: 4px solid #ef4444;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .antipattern-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #ef4444;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .alert-icon {
+    font-size: 16px;
+  }
+  
+  .antipattern-box p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Reality Check Section */
+  .reality-check-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  
+  .reality-card {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 24px;
+    padding: 48px;
+  }
+  
+  .reality-card h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  
+  .reality-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .reality-content p {
+    font-size: 18px;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  .reality-content strong {
+    color: white;
+    font-weight: 600;
+  }
+  
+  .reality-signature {
+    font-size: 19px;
+    font-weight: 500;
+    color: #10b981;
+    padding-top: 12px;
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  
+  /* Stats Banner */
+  .mindset-stats-banner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  
+  .stat-box {
+    text-align: center;
+    padding: 32px;
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid #334155;
+    border-radius: 16px;
+  }
+  
+  .stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 8px;
+  }
+  
+  .stat-label {
+    font-size: 16px;
+    color: #94a3b8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title-new {
+      font-size: 40px;
+    }
+  
+    .hero-subtitle-new {
+      font-size: 18px;
+    }
+  
+    .section-header h2 {
+      font-size: 28px;
+    }
+  
+    .reality-card {
+      padding: 32px 24px;
+    }
+  
+    .reality-card h2 {
+      font-size: 28px;
+    }
+  
+    .reality-content p {
+      font-size: 16px;
+    }
+  
+    .core-beliefs-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .process-card-header {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .stat-number {
+      font-size: 36px;
+    }
+  }

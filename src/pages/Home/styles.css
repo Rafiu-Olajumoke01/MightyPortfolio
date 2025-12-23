@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.otherContent {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+}
+
+.boardContent {
+    width: 80%;
+}
+
+.mobile-warning {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+}
