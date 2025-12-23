@@ -8,7 +8,7 @@ function Board() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const stats = [
-    { label: 'Projects Completed', value: '1', change: '+6 this year', trend: 'up' },
+    { label: 'Projects Completed', value: '10', change: '+6 this year', trend: 'up' },
     { label: 'Problems Solved', value: '24', change: 'Real impact', trend: 'up' },
     { label: 'Code Quality', value: '98%', change: 'Maintainable', trend: 'up' },
     { label: 'Client Satisfaction', value: '100%', change: '5-star rated', trend: 'up' }
