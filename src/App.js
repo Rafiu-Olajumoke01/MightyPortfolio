@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Top from "./components/Topbar/Top";
+import Layout from "./components/Layouts/Layouts";
 
 const Landing = lazy(() => import('./pages/Landing/Landing'));
 const Home = lazy(() => import('./pages/Home/home'));
@@ -14,16 +15,18 @@ function App() {
     <div className="App">
       <Suspense fallback={<div>Loading....</div>}>
         <BrowserRouter>
-        {/* <Top/> */}
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/Board" element={<Board />} />
-            <Route path="/Mindset" element={<Mindset />} />
-            <Route path="/Kanban" element={<Kanban />} />
-            <Route path="/Journey" element={<Journey />} />
-            
-          </Routes>
+          {/* <Layout> */}
+            {/* <Top/> */}
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/Board" element={<Board />} />
+              <Route path="/Mindset" element={<Mindset />} />
+              <Route path="/Kanban" element={<Kanban />} />
+              <Route path="/Journey" element={<Journey />} />
+
+            </Routes>
+          {/* </Layout> */}
         </BrowserRouter>
       </Suspense>
     </div>

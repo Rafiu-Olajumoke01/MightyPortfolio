@@ -5,6 +5,7 @@ import './Journey.css';
 function Journey() {
   const [activePhase, setActivePhase] = useState(null);
   const [selectedMilestone, setSelectedMilestone] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const journeyPhases = [
     {
@@ -189,7 +190,10 @@ function Journey() {
 
   return (
     <div className="journey-container">
-      <Top/>
+      <Top
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
       <div className="journey-hero">
         <div className="hero-badge">My Development Journey</div>
         <h1 className="hero-title">
@@ -220,7 +224,7 @@ function Journey() {
 
         <div className="timeline-track">
           {journeyPhases.map((phase, index) => (
-            <div 
+            <div
               key={phase.id}
               className={`phase-node ${activePhase === phase.id ? 'active' : ''}`}
               onMouseEnter={() => setActivePhase(phase.id)}
@@ -238,7 +242,7 @@ function Journey() {
 
                 <h3 className="phase-title">{phase.phase}</h3>
                 <p className="phase-period">{phase.period}</p>
-                
+
                 <p className="phase-description">{phase.description}</p>
 
                 <div className="phase-mindset">
@@ -281,8 +285,8 @@ function Journey() {
                     <span className="growth-percentage">{phase.growth}%</span>
                   </div>
                   <div className="growth-bar">
-                    <div 
-                      className="growth-fill" 
+                    <div
+                      className="growth-fill"
                       style={{ width: `${phase.growth}%` }}
                     ></div>
                   </div>
@@ -301,8 +305,8 @@ function Journey() {
 
         <div className="milestones-grid">
           {milestones.map((milestone, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="milestone-card clickable"
               onClick={() => openMilestone(milestone)}
             >
@@ -324,8 +328,8 @@ function Journey() {
             From being intimidated by React to architecting full-stack applications with confidence.
           </p>
           <p>
-            <strong>LASOP didn't just teach me to code - it taught me to think like a developer, 
-            solve like an engineer, and build like a professional.</strong>
+            <strong>LASOP didn't just teach me to code - it taught me to think like a developer,
+              solve like an engineer, and build like a professional.</strong>
           </p>
           <p className="conclusion-cta">
             This is just the beginning. The next chapter? Building solutions that impact thousands,

@@ -1,6 +1,6 @@
 .sidebar-container {
   width: 280px;
-  height: 100vh;
+  height: calc(100vh - 75px);
   background-color: var(--bg-secondary);
   border-right: 1px solid var(--border-subtle);
   display: flex;
@@ -8,7 +8,8 @@
   padding: 2rem 0;
   overflow-y: auto;
   position: sticky;
-  top: 0;
+  top: 75px;
+  flex-shrink: 0;
 }
 
 /* Profile Section */
@@ -323,36 +324,91 @@
   background: var(--accent);
 }
 
-/* Responsive Design */
+/* Mobile Overlay - Hidden by default */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Tablet and Mobile Styles */
 @media (max-width: 1024px) {
+  /* Make sidebar fixed and hidden off-screen */
   .sidebar-container {
-    display: none;
+    position: fixed;
+    left: 0;
+    top: 75px;
+    height: calc(100vh - 75px);
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
   }
 
-  /* .profile-avatar {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+  /* When sidebar is open */
+  .sidebar-container.open {
+    transform: translateX(0);
+  }
+
+  /* Show overlay when sidebar is open */
+  .sidebar-overlay {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 768px) {
+  .sidebar-container {
+    top: 65px;
+    height: calc(100vh - 65px);
+  }
+
+  .sidebar-overlay {
+    top: 65px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar-container {
+    width: 85vw;
+    max-width: 300px;
+  }
+
+  .profile-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75rem;
   }
 
   .profile-name {
     font-size: 1rem;
-  } */
-}
-
-@media (max-width: 768px) {
-  /* .sidebar-container {
-    position: fixed;
-    left: -280px;
-    z-index: 999;
-    transition: left 0.3s ease;
   }
 
-  .sidebar-container.open {
-    left: 0;
-  } */
+  .sidebar-footer {
+    gap: 1.5rem;
+  }
 
-  /* .sidebar-container {
-    display: none;
-  } */
+  .nav-item {
+    padding: 0.75rem 0.875rem;
+  }
+
+  .stack-item {
+    padding: 0.625rem 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-container {
+    width: 90vw;
+    max-width: 280px;
+  }
 }

@@ -1,41 +1,45 @@
-import React from 'react'
-import { FaRegMoon } from "react-icons/fa";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { GoDot } from "react-icons/go";
-import { MdToggleOff } from "react-icons/md";
-import { Link } from 'react-router-dom';
-import './top.css'
+import React from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import './top.css';
 
-function Top() {
-    return (
-        <div className='header-bar'>
-            {/* Left: Logo */}
-            <div className="logo">
-                <Link to="/home">
-                    <h2>Dev<span>Jummy.</span></h2>
-                </Link>
-            </div>
-            {/* Center: Search */}
-            <div className="searchcommand">
-                <input type="text" placeholder='Search Projects, Skills, Mindsets......' />
-            </div>
-
-            {/* Right: Theme toggle + Status */}
-            <div className="togglestatus">
-                <div className="theme">
-                    <FaRegMoon size={20} />
-                    <MdToggleOff size={30} />
-                    <MdOutlineWbSunny size={20} />
-                </div>
-
-                <div className="status">
-                    <GoDot style={{ color: 'var(--success)', marginRight: '5px' }} />
-                    <span>Online</span>
-                </div>
-            </div>
+function Top({ isSidebarOpen, setIsSidebarOpen }) {
+    // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  return (
+    <div className="header-bar">
+      <div className="logo">
+        <button 
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="mobile-menu-btn"
+          aria-label="Toggle menu"
+        >
+          {isSidebarOpen ? <FaTimes /> : <FaBars />}
+        </button>
+        <h2>Rafiu <span>Olajumoke</span></h2>
+      </div>
+      
+      <div className="searchcommand">
+        <input 
+          type="text" 
+          placeholder="Search projects, skills, or experiences..." 
+        />
+      </div>
+      
+      <div className="togglestatus">
+        <div className="theme">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+          </svg>
         </div>
-    )
+        
+        <div className="status">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <circle cx="8" cy="8" r="8"/>
+          </svg>
+          <span>Available</span>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-
-export default Top
+export default Top;

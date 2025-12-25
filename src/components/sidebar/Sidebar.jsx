@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaTasks, FaBrain, FaUserAlt, FaRocket, FaTools, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHome, FaTasks, FaBrain, FaUserAlt, FaTools } from 'react-icons/fa';
 import { SiReact, SiNodedotjs, SiMongodb, SiJavascript, SiCss3, SiGit } from 'react-icons/si';
 import './sidebar.css';
 
-function Sidebar() {
+// ✅ IMPORTANT: Now receives isOpen and onClose props!
+function Sidebar({ isOpen, onClose }) {
   const location = useLocation();
   const [hoveredStack, setHoveredStack] = useState(null);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const navItems = [
     { path: '/home', icon: FaHome, label: 'Home', badge: null },
@@ -26,20 +26,25 @@ function Sidebar() {
     { name: 'Git', icon: SiGit, color: '#F05032', level: 88 }
   ];
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
+  // ✅ Close sidebar when clicking on a link
+  const handleLinkClick = () => {
+    if (onClose) {
+      onClose();
+    }
   };
 
   return (
     <>
-    
+      {/* ✅ Mobile Overlay - Click to close sidebar */}
+      {isOpen && (
+        <div 
+          className="sidebar-overlay" 
+          onClick={onClose}
+        />
+      )}
 
-      {/* Sidebar */}
-      <div className={`sidebar-container ${isSidebarOpen ? 'open' : ''}`}>
+      {/* ✅ Sidebar - gets 'open' class when isOpen is true */}
+      <div className={`sidebar-container ${isOpen ? 'open' : ''}`}>
         {/* Profile Section */}
         <div className="sidebar-profile">
           <div className="profile-avatar">RO</div>
@@ -63,7 +68,7 @@ function Sidebar() {
                 key={item.path}
                 to={item.path} 
                 className={`nav-item ${isActive ? 'active' : ''}`}
-                onClick={closeSidebar}
+                onClick={handleLinkClick}
               >
                 <Icon className="nav-icon" />
                 <span className="nav-label">{item.label}</span>

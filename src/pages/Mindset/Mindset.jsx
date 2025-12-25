@@ -4,6 +4,7 @@ import './mindset.css';
 
 export default function Mindset() {
   const [selectedThought, setSelectedThought] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const thinkingProcess = [
     {
@@ -78,20 +79,23 @@ export default function Mindset() {
   return (
     <div className="mindset-container-new">
       {/* Hero Section */}
-      <Top/>
+      <Top
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
       <div className="mindset-hero-new">
         <div className="hero-badge-new">
           <span className="badge-icon">🧠</span>
           How I Actually Think
         </div>
-        
+
         <h1 className="hero-title-new">
           I Don't Build Apps.<br />
           <span className="highlight-text">I Solve Problems.</span>
         </h1>
-        
+
         <p className="hero-subtitle-new">
-          10 completed projects. 100% client satisfaction. These didn't happen by accident. 
+          10 completed projects. 100% client satisfaction. These didn't happen by accident.
           They happened because I follow a specific problem-solving process for every single project.
         </p>
 
@@ -120,7 +124,7 @@ export default function Mindset() {
                 className="process-card-header"
               >
                 <div className="process-icon">{step.icon}</div>
-                
+
                 <div className="process-content">
                   <div className="process-title-row">
                     <h3>{step.phase}</h3>
@@ -140,7 +144,7 @@ export default function Mindset() {
                     </div>
                     <p>{step.example}</p>
                   </div>
-                  
+
                   <div className="antipattern-box">
                     <div className="antipattern-header">
                       <span className="alert-icon">⚠</span>
@@ -159,27 +163,27 @@ export default function Mindset() {
       <div className="reality-check-section">
         <div className="reality-card">
           <h2>The Reality Check</h2>
-          
+
           <div className="reality-content">
             <p>
-              <strong>Here's the truth:</strong> Most developers fall in love with their code. 
+              <strong>Here's the truth:</strong> Most developers fall in love with their code.
               I fall in love with the problem being solved.
             </p>
-            
+
             <p>
-              When AgroStack helps a farmer get 30% better yields, that's not because I used React and Django. 
+              When AgroStack helps a farmer get 30% better yields, that's not because I used React and Django.
               It's because I understood that farmers needed real-time market data to make better decisions.
             </p>
-            
-           
-            
+
+
+
             <p>
-              The difference between a developer and a problem solver? A developer asks "what can I build?" 
+              The difference between a developer and a problem solver? A developer asks "what can I build?"
               A problem solver asks "what needs fixing?"
             </p>
-            
+
             <p className="reality-signature">
-              I'm a problem solver who happens to code. That's why my projects work. That's why clients come back. 
+              I'm a problem solver who happens to code. That's why my projects work. That's why clients come back.
               That's why this portfolio exists.
             </p>
           </div>

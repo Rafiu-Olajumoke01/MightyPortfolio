@@ -1,24 +1,31 @@
-import React from 'react'
-import './styles.css'
-import Top from '../../components/Topbar/Top'
-import Sidebar from '../../components/sidebar/Sidebar'
-import Board from '../Board/board'
+import React, { useState } from 'react';
+import './styles.css';
+import Top from '../../components/Topbar/Top';
+import Sidebar from '../../components/sidebar/Sidebar';
+import Board from '../Board/board';
 
-function home() {
+function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className='main'>
-      <Top/>
+      <Top 
+        isSidebarOpen={isSidebarOpen} 
+        setIsSidebarOpen={setIsSidebarOpen} 
+      />
+      
       <div className="otherContent">
-        <div className="sidebar">
-          <Sidebar />
-        </div>
+        <Sidebar 
+          isOpen={isSidebarOpen} 
+          onClose={() => setIsSidebarOpen(false)} 
+        />
 
         <div className="boardContent">
           <Board />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default home
+export default Home;

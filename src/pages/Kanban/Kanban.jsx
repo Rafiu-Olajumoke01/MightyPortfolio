@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './kanban.css';
-import Top from '../../components/Topbar/Top';
+
 
 function Kanban() {
   const [tasks, setTasks] = useState({
@@ -107,15 +107,15 @@ function Kanban() {
 
   return (
     <div className="kanban-page">
-        <Top/>
+      {/* <Top
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      /> */}
       {/* Hero Section */}
       <div className="kanban-hero">
-        {/* <div className="hero-badge">
-          <span>📊</span> Project Management
-        </div> */}
         <h1>My Development Pipeline</h1>
         <p>
-          This is how I organize my work - from ideas in the backlog to shipped products. 
+          This is how I organize my work - from ideas in the backlog to shipped products.
           Real-time view of what I'm building, what's next, and what I've completed.
         </p>
       </div>
@@ -156,7 +156,7 @@ function Kanban() {
               {tasks[column.id].map(task => (
                 <div key={task.id} className="task-card">
                   <div className="task-header">
-                    <span 
+                    <span
                       className="priority-indicator"
                       style={{ background: getPriorityColor(task.priority) }}
                       title={`${task.priority} priority`}
@@ -168,7 +168,7 @@ function Kanban() {
 
                   {task.progress && (
                     <div className="progress-bar">
-                      <div 
+                      <div
                         className="progress-fill"
                         style={{ width: `${task.progress}%` }}
                       />
@@ -218,7 +218,7 @@ function Kanban() {
         <div className="info-card">
           <h3>🎯 Current Focus</h3>
           <p>
-            Right now I'm finishing RemoteNg and adding USSD features to AgroStack. 
+            Right now I'm finishing RemoteNg and adding USSD features to AgroStack.
             Once these ship, I'll move to the e-commerce platform for small businesses.
           </p>
           <p className="focus-note">
