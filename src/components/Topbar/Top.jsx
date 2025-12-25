@@ -14,7 +14,7 @@ function Top({ isSidebarOpen, setIsSidebarOpen }) {
         >
           {isSidebarOpen ? <FaTimes /> : <FaBars />}
         </button>
-        <h2>Rafiu <span>Olajumoke</span></h2>
+        <h2>Dev <span>Jummy.</span></h2>
       </div>
       
       <div className="searchcommand">
